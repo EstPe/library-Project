@@ -1,0 +1,57 @@
+<app-nav></app-nav>
+
+<body>
+    <div>
+        <h1 class="display-3 glow">Welcome</h1>
+        <p class="lead glow1">{{userInfo.name}}</p>
+    </div>
+</body>
+<br>
+
+<h1> Top 5 New products</h1>
+
+
+<div class="row" style="margin-left: 5%;">
+    <ng-container *ngFor="let category of list_of_category " style=" border: solid ">
+        <ng-container *ngIf="count()%5==0 ">&nbsp;&nbsp;
+            <div class="card bg-light mb-3 " style="max-width: 20rem; width: 20%; ">
+
+                <div class="div">{{category.Category}}</div>
+                <h4 style="font-family: aharoni;">{{category.Name}}</h4>
+
+                <div class="card-body ">
+                    <img class="img " src="{{category.ImgUrl}} " />
+                </div>
+                <p class="card-text " style="border: solid; padding-left: 10%; ">SerialNumber:{{category.SerialNumber}} <span style=" font-weight:bolder; ">{{category.Id}}</span>, Price: <span style="font-weight: bolder; ">{{category.Price}}₪</span></p>
+
+
+            </div>
+        </ng-container>
+    </ng-container>
+</div>
+
+<h1>Top 5 Products of the week!</h1>
+<div class="row " style="margin-left: 5%; ">
+    <ng-container *ngFor="let category of list_of_category ">
+        <ng-container *ngIf="count()%5==1 ">&nbsp;&nbsp;
+            <div class="card bg-light mb-3 " style="max-width: 20rem; width: 20%; ">
+
+                <div class="div" style="height:20%;">{{category.Category}}
+                    <p style="margin-left: 65%;transform: rotate(15deg); background-color: red;"> 20% off</p>
+                </div>
+                <h4 style="font-family: aharoni;">{{category.Name}}</h4>
+
+                <div class="card-body ">
+                    <img class="img " src="{{category.ImgUrl}} " />
+                </div>
+                <p class="card-text " style="border: solid; padding-left: 10%; ">SerialNumber: <span style=" font-weight:bolder; ">{{category.Id}}</span>,<br> Price: <span style="font-weight: bolder;text-decoration: line-through;">{{category.Price}}₪</span>
+                    <span> {{category.Price*discount}}₪</span></p>
+
+
+
+
+            </div>
+        </ng-container>
+    </ng-container>
+</div>
+<app-footer></app-footer>

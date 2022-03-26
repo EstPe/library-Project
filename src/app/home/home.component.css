@@ -1,0 +1,74 @@
+img {
+    margin-left: 10%;
+    z-index: -1;
+}
+
+.img {
+    width: 25%;
+    margin-left: 40%;
+}
+
+body {
+    background-image: url(https://wallpaperaccess.com/full/235860.jpg);
+    background-size: 60% 100%;
+    padding-left: 10%;
+    padding-bottom: 10%;
+    padding-top: 8%;
+    color: aliceblue;
+    font-weight: 100;
+}
+
+.div {
+    font-family: Kristen ITC;
+    background-color: rgb(231, 230, 230);
+    color: black;
+    padding: 5%;
+}
+
+h1,
+p {
+    color: black;
+    padding-left: 10%;
+    font-family: Kristen ITC;
+}
+
+.card:hover {
+    box-shadow: 8px 8px 8px black;
+    transform: translatey(-10px);
+}
+
+
+/* body {
+    background-color: black;
+    font-family: cursive;
+} */
+
+.glow {
+    font-size: 80px;
+    color: #fff;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+.glow1 {
+    font-size: 40px;
+    color: #fff;
+    animation: glow1 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+
+@keyframes glow1 {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}

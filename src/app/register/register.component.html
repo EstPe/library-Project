@@ -1,0 +1,27 @@
+<body style="background-image: url(https://aeroleads.com/blog/wp-content/uploads/2017/12/static1.squarespace.com_.jpg); background-repeat: no-repeat; background-size: 100% 100%; background-position-y: 100% 100%;">
+    <br><br><br>
+    <div class="mainLog" style="height: 550px;">
+        <p class="sign" align="center">Sign in</p>
+        <form class="form1" (ngSubmit)="onSubmit()" style="padding:5%;">
+            <fieldset>
+                <input class="un " type="text" align="center" placeholder="Email" [(ngModel)]="user.email" required name="Email" #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                <small class="pass" *ngIf="!email?.valid && (email?.dirty || email?.touched)" style="color: brown;margin-left: 30%;">Invalid Email</small>
+                <input class="un" type="text" placeholder="Name" id="Name" name="Name" [(ngModel)]="user.name">
+                <input class="pass" type="password" align="center" placeholder="Password" ngModel required password minlength="8" name="Password" [(ngModel)]="user.password" #passw="ngModel">
+                <small class="pass" *ngIf="!passw?.valid && (passw?.dirty || passw?.touched)" style="color: brown;margin-left: 30%;">Invalid password</small>
+                <input class="pass" type="text" minlength="10" placeholder="Phone number" id="Phone" name="Phone" [(ngModel)]="user.phone">
+                <br>
+                <input type="radio" value="male" name="gender" [(ngModel)]="gender"> Male
+                <input type="radio" value="female" name="gender" [(ngModel)]="gender"> Female
+
+            </fieldset>
+            <br>
+            <button type="submit" class="submit">Submit</button>&nbsp;&nbsp;&nbsp;
+            <button type="button" routerLink="/login" class="submit">login</button>
+            <br><br><br><br>
+        </form>
+
+    </div>
+    <br><br><br><br><br><br><br>
+
+</body>
