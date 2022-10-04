@@ -7,17 +7,22 @@ import { UserService } from '../user.service';
 @Component({
   selector: 'app-product-preview',
   templateUrl: './product-preview.component.html',
-  styleUrls: ['./product-preview.component.css']
+  styleUrls: ['./product-preview.component.css'],
 })
 export class ProductPreviewComponent implements OnInit {
-  @Input() category: string = "";
+  @Input() category: string = '';
 
-  lists = []
-  new = []
-  cart_list = []
+  lists = [];
+  new = [];
+  cart_list = [];
   list2 = [];
 
-  constructor(private CategoriesService: CategoriesService, private cart: CartsService, private acRout: ActivatedRoute, private user: UserService) { }
+  constructor(
+    private CategoriesService: CategoriesService,
+    private cart: CartsService,
+    private acRout: ActivatedRoute,
+    private user: UserService
+  ) {}
   click: boolean = false;
   open() {
     this.click = true;
@@ -39,17 +44,18 @@ export class ProductPreviewComponent implements OnInit {
     this.CategoriesScienceFiction();
     this.CategoriesRomance();
     this.CategoriesKids();
-
   }
   cartDetails = new Cart(0, 0);
   onClick(form) {
-    console.log(this.userId)
+    console.log(this.userId);
     this.cartDetails.userId = this.userId;
     this.cartDetails.SerialNumber = form.SerialNumber;
-    this.cart.addProduct(this.cartDetails).subscribe((data: category_of_books) => {
-      alert("you add a proudct sucsseflly");
-      // this.UserServic.setUserConected(data.id)
-    });
+    this.cart
+      .addProduct(this.cartDetails)
+      .subscribe((data: category_of_books) => {
+        alert('you add a proudct sucsseflly');
+        // this.UserServic.setUserConected(data.id)
+      });
   }
 
   ThrillersCat: category_of_books[] = [];
@@ -65,12 +71,12 @@ export class ProductPreviewComponent implements OnInit {
   CategoriesScienceFiction() {
     this.CategoriesService.getCategoriesScienceFiction().subscribe((data) => {
       this.ScienceFictionCat = data;
-    })
+    });
   }
   CategoriesKids() {
     this.CategoriesService.getCategoriesKids().subscribe((data) => {
       this.KidsCategory = data;
-    })
+    });
   }
   CategoriesRomance() {
     this.CategoriesService.getCategoriesRomance().subscribe((data) => {
@@ -83,34 +89,21 @@ export class ProductPreviewComponent implements OnInit {
     });
   }
 
-
   SerchCategories(Category: string) {
     switch (Category) {
-      case "Thrillers":
+      case 'Thrillers':
         return this.ThrillersCat;
-      case "Science Fiction":
+      case 'Science Fiction':
         return this.ScienceFictionCat;
-      case "Kids":
+      case 'Kids':
         return this.KidsCategory;
-      case "Romance":
+      case 'Romance':
         return this.RomanceCategory;
-      case "Cooking and Baking":
+      case 'Cooking and Baking':
         return this.CookingAndBakingCat;
       default:
         //console.log("does not work")
         return false;
     }
   }
-
-
-
-
-
-
-
-
-
-
-
-
 }

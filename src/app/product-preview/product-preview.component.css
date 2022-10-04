@@ -19,7 +19,7 @@ a:hover {
 }
 
 .product-grid {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     text-align: center;
 }
 
@@ -40,7 +40,7 @@ a:hover {
 
 .product-grid .product-discount-label {
     color: #fff;
-    background: #A5BA8D;
+    background: #a5ba8d;
     font-size: 13px;
     font-weight: 600;
     line-height: 25px;
@@ -57,7 +57,7 @@ a:hover {
     position: absolute;
     top: 10px;
     right: -50px;
-    transition: all .5s ease 0s;
+    transition: all 0.5s ease 0s;
 }
 
 .product-grid:hover .product-links {
@@ -87,7 +87,7 @@ a:hover {
 }
 
 .product-grid .add-to-cart {
-    background: #A5BA8D;
+    background: #a5ba8d;
     color: #fff;
     font-size: 16px;
     text-transform: uppercase;
@@ -105,7 +105,7 @@ a:hover {
 }
 
 .product-grid .Description {
-    background: #A5BA8D;
+    background: #a5ba8d;
     color: #fff;
     font-size: 16px;
     text-transform: uppercase;

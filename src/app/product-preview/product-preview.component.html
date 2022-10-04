@@ -1,31 +1,32 @@
-<br><br><br><br>
+<br /><br /><br /><br />
 <div class="row">
     <div class="col mb-3 col-sm-6" *ngFor="let list_of_books of SerchCategories(category)">
-        <div class=" product-grid ">
-            <div class="product-image ">
-                <a href="# " class="image ">
-                    <img src="{{list_of_books.ImgUrl}} ">
+        <div class="product-grid">
+            <div class="product-image">
+                <a href="# " class="image">
+                    <img src="{{ list_of_books.ImgUrl }} " />
                 </a>
 
-                <a type="button " class="add-to-cart " (click)="onClick(list_of_books) ">Add to Cart</a>
-            </div>
-            <div class="product-content ">
-                <h3 class="title ">Book Name:{{list_of_books.Name}}</h3>
-                <div class="price ">{{list_of_books.Price}}₪</div>
-                <span style="font-weight: bolder; "> 
-                    SerialNumber: {{list_of_books.SerialNumber}}</span><br><br><br>
-                <a type="button " class="Description " [routerLink]="[ '/ProductPreview',list_of_books.SerialNumber] " value="Description ">More Info</a>
-
-
-
-            </div>
-        </div>
-
+                <a type="button " class="add-to-cart" (click)="onClick(list_of_books)">Add to Cart</a
+        >
+      </div>
+      <div class="product-content">
+        <h3 class="title">Book Name:{{ list_of_books.Name }}</h3>
+        <div class="price">{{ list_of_books.Price }}₪</div>
+        <span style="font-weight: bolder">
+          SerialNumber: {{ list_of_books.SerialNumber }}</span
+        ><br /><br /><br />
+        <a
+          type="button "
+          class="Description"
+          [routerLink]="['/ProductPreview', list_of_books.SerialNumber]"
+          value="Description "
+          >More Info</a
+        >
+      </div>
     </div>
+  </div>
 </div>
-
-
-
 
 <!-- <div class="row ">
     <ng-container *ngIf="SerchCategories(category) "> -->
@@ -35,17 +36,17 @@
 
         <img src="{{list_of_books.ImgUrl}} " name="Img "><br><br>
         <a type="button " style="margin-left: 2%;background-color: black;color: white; padding-left: 2%;padding-right: 4%;text-align: center; " (click)="onClick(list_of_books) " value="Add to Cart " name="Add ">Add to cart </a>
-        <ul class="list-group list-group-flush ">
-            <li class="list-group-item " style="font-family: Kristen ITC; " name="price ">The price: <span style="font-weight: bolder; ">{{list_of_books.Price}}₪</span></li>
-            <li class="list-group-item " style="font-family: Kristen ITC; " name="SerialNumber ">The Serial number: <span style="font-weight: bolder; "> 
+                <ul class="list-group list-group-flush ">
+                    <li class="list-group-item " style="font-family: Kristen ITC; " name="price ">The price: <span style="font-weight: bolder; ">{{list_of_books.Price}}₪</span></li>
+                    <li class="list-group-item " style="font-family: Kristen ITC; " name="SerialNumber ">The Serial number: <span style="font-weight: bolder; "> 
                         {{list_of_books.SerialNumber}}</span>
-                <span style="padding-left: 45%; "> </span>
-            </li>
-        </ul> -->
-<!-- <input type="button " (click)="open() " value="open " class="btn btn-primary " />
+                        <span style="padding-left: 45%; "> </span>
+                    </li>
+                </ul> -->
+                <!-- <input type="button " (click)="open() " value="open " class="btn btn-primary " />
                 <input type="button " (click)="close() " value="close " class="btn btn-primary " />
                 <p *ngIf="click==true ">{{list_of_books.Description}}</p> -->
-<!-- <input type="button " [routerLink]="[ '/ProductPreview',list_of_books.SerialNumber] " value="Description " />
+                <!-- <input type="button " [routerLink]="[ '/ProductPreview',list_of_books.SerialNumber] " value="Description " />
     </ng-container>
 </div>
 </div> -->

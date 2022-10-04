@@ -3,10 +3,9 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
-
   /*getUsers(){
     return[
       new User("esterpe","ester398@gmail.com","12345678"),
@@ -23,15 +22,14 @@ export class UserService {
   //     ];
   //   }
 
-
   // }
   // getTheUser() {
   //   return this.list;
   // }
-  baseURL: string = "http://localhost:3000/";
+  baseURL: string = 'http://localhost:3000/';
   headers = { 'content-type': 'application/json' };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getUsers(): Observable<any> {
     return this.http.get(this.baseURL + 'user');
@@ -41,13 +39,11 @@ export class UserService {
     return this.http.post(this.baseURL + 'user', body, {
       headers: this.headers,
     });
-
   }
   // updateProducts(user: User): Observable<any> {
   //   let body = JSON.stringify(user);
   //   return this.http.put(this.baseURL + 'user/' + user.id, body,
   //     { headers: this.headers });
-
 
   // }
 
@@ -56,14 +52,12 @@ export class UserService {
   // }
   userId: number;
   setUserConected(userId: number) {
-    return this.userId = userId;
+    return (this.userId = userId);
   }
   returnUserConected() {
     return this.userId;
   }
-
 }
-
 
 export class User {
   id: number;
@@ -73,7 +67,14 @@ export class User {
   phone: string;
   image: string;
 
-  constructor(id: number, name: string, email: string, password: number, phone: string, image: string) {
+  constructor(
+    id: number,
+    name: string,
+    email: string,
+    password: number,
+    phone: string,
+    image: string
+  ) {
     this.id = id;
     this.name = name;
     this.email = email;

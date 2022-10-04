@@ -7,13 +7,10 @@ import { UserService } from '../user.service';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-
   list_from_cart = [];
-
-
 
   confirm: boolean = true;
   show_confirm() {
@@ -31,7 +28,11 @@ export class CartComponent implements OnInit {
   }
   userId: number;
   j: number = 0;
-  constructor(private carts: CartsService, private CategoriesService: CategoriesService, private user: UserService) { }
+  constructor(
+    private carts: CartsService,
+    private CategoriesService: CategoriesService,
+    private user: UserService
+  ) {}
   ngOnInit(): void {
     // this.list_from_cart = this.carts.getCart_info();
     this.userId = this.user.returnUserConected();
@@ -44,7 +45,9 @@ export class CartComponent implements OnInit {
         for (let i = 0; i < data.length; i++) {
           if (this.userId == data[i].userId) {
             this.cart[this.j++] = data[i];
-            this.CategoriesService.getProductsToCart(this.cart[this.j - 1].SerialNumber).subscribe((data: category_of_books[]) => {
+            this.CategoriesService.getProductsToCart(
+              this.cart[this.j - 1].SerialNumber
+            ).subscribe((data: category_of_books[]) => {
               this.Category = data;
               this.Category2.push(data[0]);
               this.total();
