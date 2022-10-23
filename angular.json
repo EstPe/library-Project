@@ -117,5 +117,8 @@
             }
         }
     },
-    "defaultProject": "library"
+    "defaultProject": "library",
+    "cli": {
+      "analytics": "30ae38cb-b887-4f2c-bfda-9c92b97ec2d2"
+    }
 }
